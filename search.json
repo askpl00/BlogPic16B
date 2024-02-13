@@ -7,24 +7,73 @@
     "text": "About this blog"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/hw0/HW0_post-new.html",
+    "href": "posts/hw0/HW0_post-new.html",
+    "title": "HW0 Creating Post",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "In this post, we will explore the dataset of penguins that captures various aspects of their physical characteristics. We will visualize the dataset and the explore the relationship between different characteristics by using the Plotly library. We will focus on capturing the differences in Culmen Length and Culmen Depth among penguins based on their sex and the place they live. We will create some visualization to see if there is any significant difference of Culmen Length and Culmen Depth between sex or where they live."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/hw0/HW0_post-new.html#introduction",
+    "href": "posts/hw0/HW0_post-new.html#introduction",
+    "title": "HW0 Creating Post",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "In this post, we will explore the dataset of penguins that captures various aspects of their physical characteristics. We will visualize the dataset and the explore the relationship between different characteristics by using the Plotly library. We will focus on capturing the differences in Culmen Length and Culmen Depth among penguins based on their sex and the place they live. We will create some visualization to see if there is any significant difference of Culmen Length and Culmen Depth between sex or where they live."
+  },
+  {
+    "objectID": "posts/hw0/HW0_post-new.html#load-the-dataset",
+    "href": "posts/hw0/HW0_post-new.html#load-the-dataset",
+    "title": "HW0 Creating Post",
+    "section": "Load the Dataset",
+    "text": "Load the Dataset\n\nimport pandas as pd\nurl = \"https://raw.githubusercontent.com/pic16b-ucla/24W/main/datasets/palmer_penguins.csv\"\n\n# Load the dataset into a pandas DataFrame\npenguins = pd.read_csv(url)\n\n# First few rows of the data\npenguins.head()\n\n\n\n\n\n\n\n\nstudyName\nSample Number\nSpecies\nRegion\nIsland\nStage\nIndividual ID\nClutch Completion\nDate Egg\nCulmen Length (mm)\nCulmen Depth (mm)\nFlipper Length (mm)\nBody Mass (g)\nSex\nDelta 15 N (o/oo)\nDelta 13 C (o/oo)\nComments\n\n\n\n\n0\nPAL0708\n1\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN1A1\nYes\n11/11/07\n39.1\n18.7\n181.0\n3750.0\nMALE\nNaN\nNaN\nNot enough blood for isotopes.\n\n\n1\nPAL0708\n2\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN1A2\nYes\n11/11/07\n39.5\n17.4\n186.0\n3800.0\nFEMALE\n8.94956\n-24.69454\nNaN\n\n\n2\nPAL0708\n3\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN2A1\nYes\n11/16/07\n40.3\n18.0\n195.0\n3250.0\nFEMALE\n8.36821\n-25.33302\nNaN\n\n\n3\nPAL0708\n4\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN2A2\nYes\n11/16/07\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nAdult not sampled.\n\n\n4\nPAL0708\n5\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN3A1\nYes\n11/16/07\n36.7\n19.3\n193.0\n3450.0\nFEMALE\n8.76651\n-25.32426\nNaN"
+  },
+  {
+    "objectID": "posts/hw0/HW0_post-new.html#visualizing-culmen-size-by-sex",
+    "href": "posts/hw0/HW0_post-new.html#visualizing-culmen-size-by-sex",
+    "title": "HW0 Creating Post",
+    "section": "Visualizing Culmen Size by Sex",
+    "text": "Visualizing Culmen Size by Sex\nFirst, we will going to see if there is a difference of Culmen Length and Depth between male and female penguins. We will plot the data in 2D plots with different scatter colors using the plotly library.\n\nimport plotly\nfrom plotly import express as px\n\nfig1 = px.scatter(data_frame = penguins,      \n                 x = \"Culmen Length (mm)\",    # column for x axis\n                 y = \"Culmen Depth (mm)\",     # column for y axis\n                 color = \"Sex\",               # column for dot color : \n                                              #   visualize the difference by sex\n                 width = 500,                 # width of figure\n                 height = 300,                # height of figure\n                 opacity = 0.5                # opacity of figure\n                )\n\n#reduce whitespace and add title\nfig1.update_layout(margin={\"r\":0, \"t\":50, \"l\":0, \"b\":0}, \n                  title = \"Culmen Length and Depth by Sex\")\nfig1.show()\n\n# Save the figure as HTML\nfrom plotly.io import write_html\nwrite_html(fig1, \"plot1.html\")\n\n                                                \n\n\nAs you can see above, overall, male penguin have deeper and longer Culmen. However, there is no clear boundary between the sex. That is because the length and the depth can be affected by other factors, especially the species of penguins."
+  },
+  {
+    "objectID": "posts/hw0/HW0_post-new.html#visualizing-culmen-size-by-habitat",
+    "href": "posts/hw0/HW0_post-new.html#visualizing-culmen-size-by-habitat",
+    "title": "HW0 Creating Post",
+    "section": "Visualizing Culmen Size by Habitat",
+    "text": "Visualizing Culmen Size by Habitat\nNext, we’re curious about how the habitat of a penguin might influence its Culmen size. We will again plot the 2D scatter plot using the ploty library.\n\nfig2 = px.scatter(data_frame = penguins,\n                 x = \"Culmen Length (mm)\",   \n                 y = \"Culmen Depth (mm)\",    \n                 color = \"Island\",          # column for dot color : \n                                            #   visualize the difference by habitat\n                 width = 500,\n                 height = 300,\n                 opacity = 0.5\n                )\n\nfig2.update_layout(margin={\"r\":0, \"t\":50, \"l\":0, \"b\":0}, \n                  title = \"Culmen Length and Depth by Habitat\")\nfig2.show()\n\nwrite_html(fig2, \"plot2.html\")\n\n                                                \n\n\nIn the plot, we can see that overall, the penguins in Drean island have the biggest Culmen. In Torgersen, those with similar Culmen live. However, in Biscoe and Dream island penguins with various size of Culmen live together."
+  },
+  {
+    "objectID": "posts/hw0/HW0_post-new.html#conclusion",
+    "href": "posts/hw0/HW0_post-new.html#conclusion",
+    "title": "HW0 Creating Post",
+    "section": "Conclusion",
+    "text": "Conclusion\nThrough the visualiazation, we have observed the differences in Culmen size among penguins based on sex and their living islands. However, it looks like there isn’t clear and significant difference of the Culmen size by sex or habitat itself. We might need to add some more classifiers in order to detect the difference in the Culmen size."
+  },
+  {
+    "objectID": "posts/hw1/index.html",
+    "href": "posts/hw1/index.html",
+    "title": "HW1 : Visualizing Climate Data using Query & Database",
+    "section": "",
+    "text": "In this blog post, we’ll look through interesting dataset on global temperatures and explore various ways of visualize using Python, SQLite, and Plotly. We will create interactive visualizations that can help us understand worldwide temperature over time.\n\n# To properly show figures in your blog,\n\nimport plotly.io as pio\npio.renderers.default=\"iframe\""
+  },
+  {
+    "objectID": "posts/hw1/index.html#yearly-temperature-variation",
+    "href": "posts/hw1/index.html#yearly-temperature-variation",
+    "title": "HW1 : Visualizing Climate Data using Query & Database",
+    "section": "1) Yearly Temperature Variation",
+    "text": "1) Yearly Temperature Variation\nQuestion: How has the temperature variation (difference between the highest and lowest temperatures) changed over the years for a given country?\nTo answer this question, yearly_temperature_variation will calculate the yearly temperature variation for a specified country and range of years.\nThis is what the yearly_temperature_variation query function looks like :\n\nfrom climate_database import yearly_temperature_variation\nimport inspect\nprint(inspect.getsource(yearly_temperature_variation))\n\ndef yearly_temperature_variation(db_file, country, start_year, end_year):\n    \"\"\"\n    Yearly temperature variation (difference between max and min temperatures) \n    for a given country and start year and end year.\n    \n    Returns: Dataframe with two columns: Year and Variation,\n    \"\"\"\n    conn = sqlite3.connect(db_file)\n    query = f\"\"\"\n    SELECT T.Year, (MAX(T.Temp) - MIN(T.Temp)) AS Variation\n    FROM temperatures T\n    JOIN stations S ON T.ID = S.ID\n    JOIN countries C ON substr(T.ID, 1, 2) = C.[FIPS 10-4]\n    WHERE C.Name = ? AND T.Year BETWEEN ? AND ?\n    GROUP BY T.Year\n    ORDER BY T.Year;\n    \"\"\"\n    df = pd.read_sql_query(query, conn, params=(country, start_year, end_year))\n    conn.close()\n    return df\n\n\n\nWith the plot_yearly_temperature_variation, we can create a line plot showing the temperature variation of a specific country.\n\ndef plot_yearly_temperature_variation(db_file, country, start_year, end_year):\n    \"\"\"\n    Creates a line plot showing the yearly temperature variation.\n    \"\"\"\n    \n    df = yearly_temperature_variation(db_file, country, start_year, end_year)\n    fig = px.line(df, x='Year', y='Variation', \n                  title=f'Yearly Temperature Variation in {country}')\n    fig.update_xaxes(title_text='Year')\n    fig.update_yaxes(title_text='Temperature Variation (°C)')\n    return fig\n\n\nplot_yearly_temperature_variation(\"climate_data.db\", \"Japan\", 1960, 2000)"
+  },
+  {
+    "objectID": "posts/hw1/index.html#extreme-temperature-on-specific-year-by-month",
+    "href": "posts/hw1/index.html#extreme-temperature-on-specific-year-by-month",
+    "title": "HW1 : Visualizing Climate Data using Query & Database",
+    "section": "2) Extreme Temperature on Specific year by Month",
+    "text": "2) Extreme Temperature on Specific year by Month\nQuestion : “What are the hottest and coldest temperatures for each month in a given year?”\nThe second query function is plot_extreme_temperatures(df, year) function which get the extreme temperature, the highest and the lowest, in the world when you put the input year. It will show you facet plot with the lowest and the highest temperatre plots in seperate figure.\n\nfrom climate_database import extreme_temperatures\nimport inspect\nprint(inspect.getsource(extreme_temperatures))\n\ndef extreme_temperatures(db_file, year):\n    \"\"\"\n    Lowest and highest temperatures for each month in specific year.\n    \n    Returns: Dataframe containing the lowest and highest temperatures for each month \n    in the world.\n    \"\"\"\n    conn = sqlite3.connect(db_file)\n    cmd = f\"\"\"\n    SELECT {year} AS Year, Month,\n           MIN(Temp) AS Min_Temperature,\n           MAX(Temp) AS Max_Temperature\n    FROM temperatures\n    WHERE Year = '{year}'\n    GROUP BY Month\n    ORDER BY Month\n    \"\"\"\n    df = pd.read_sql_query(cmd, conn)\n    # Prepare the DataFrame for faceting by melting it\n    df_melted = df.melt(id_vars=['Month'], value_vars=['Min_Temperature', 'Max_Temperature'],\n                        var_name='Temperature_Type', value_name='Temperature')\n    conn.close()\n    return df_melted\n\n\n\n\nimport plotly.express as px\n\ndef plot_extreme_temperatures(df, year):\n    \"\"\"\n    Creates a faceted line plot showing the lowest and highest temperatures for each month.\n    \n    Parameters:\n    - df (DataFrame): DataFrame containing the lowest and highest temperatures for each month, \n        which we got from the query.\n    - year (int): The year for which extreme temperatures are visualized.\n    \"\"\"\n    # Use the DataFrame directly for plotting with Plotly Express\n    fig = px.line(df, x='Month', y='Temperature', color='Temperature_Type', \n                  facet_col='Temperature_Type', title=f'Extreme Temperatures in {year}')\n    \n    # Update layout for better readability\n    fig.update_layout(xaxis_title='Month', yaxis_title='Temperature (°C)')\n    fig.show()\n\n\n# Plot using the year you want \n# Ex. year 2000\nplot_extreme_temperatures(extreme_temperatures(\"climate_data.db\", 2000), 2000)"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "BlogPic16B",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nFeb 13, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nFeb 10, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "HW1 : Visualizing Climate Data using Query & Database\n\n\n\n\n\n\nweek 2\n\n\nweek 3\n\n\nHW\n\n\n\n\n\n\n\n\n\nJan 29, 2024\n\n\nDonggyu Kim\n\n\n\n\n\n\n\n\n\n\n\n\nHW0 Creating Post\n\n\n\n\n\n\nweek 1\n\n\nHW\n\n\n\n\n\n\n\n\n\nJan 22, 2024\n\n\nDonggyu Kim\n\n\n\n\n\n\nNo matching items"
   }
 ]
