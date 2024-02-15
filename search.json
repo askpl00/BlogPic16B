@@ -53,7 +53,7 @@
     "href": "posts/hw3/index.html",
     "title": "HW3 : Message Bank Web Development Using Flask",
     "section": "",
-    "text": "In this post, I’m going to show you how I built a simple message bank web application using Flask. This application allows users to submit messages and view a random messages that were submitted. Let’s dive into the functions that I built to make the web app."
+    "text": "URL for the Github repo : https://github.com/askpl00/flask_hw3_16B/tree/main\nIn this post, I’m going to show you how I built a simple message bank web application using Flask. This application allows users to submit messages and view a random messages that were submitted. Let’s dive into the functions that I built to make the web app."
   },
   {
     "objectID": "posts/hw3/index.html#the-main-page-route",
@@ -102,7 +102,7 @@
     "href": "posts/hw3/index.html#random_messages-function",
     "title": "HW3 : Message Bank Web Development Using Flask",
     "section": "random_messages function",
-    "text": "random_messages function\ndef random_messages(n):\n\n    db = get_message_db()\n    cursor = db.cursor()\n    \n    # Fetch n random messages from the database\n    # If there are fewer than n messages, fetch all available messages.\n    query = \"SELECT handle, message FROM messages ORDER BY RANDOM() LIMIT ?\"\n   \n    # Fetch the results of the query\n    cursor.execute(query, (n,))\n    random_msgs = cursor.fetchall()\n    \n    db.close()  # Close the database connection\n    return random_msgs\n\n![messages](ScreenShot2.png)\n\nThe random_messages function allows to pick specific number of random rows from the database, and return those random messages.\n\n![](ScreenShot2.png){.preview-image}"
+    "text": "random_messages function\ndef random_messages(n):\n\n    db = get_message_db()\n    cursor = db.cursor()\n    \n    # Fetch n random messages from the database\n    # If there are fewer than n messages, fetch all available messages.\n    query = \"SELECT handle, message FROM messages ORDER BY RANDOM() LIMIT ?\"\n   \n    # Fetch the results of the query\n    cursor.execute(query, (n,))\n    random_msgs = cursor.fetchall()\n    \n    db.close()  # Close the database connection\n    return random_msgs\nThe random_messages function allows to pick specific number of random rows from the database, and return those random messages."
   },
   {
     "objectID": "posts/hw1/index.html",
