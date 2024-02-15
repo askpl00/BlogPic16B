@@ -49,6 +49,62 @@
     "text": "Conclusion\nThrough the visualiazation, we have observed the differences in Culmen size among penguins based on sex and their living islands. However, it looks like there isn’t clear and significant difference of the Culmen size by sex or habitat itself. We might need to add some more classifiers in order to detect the difference in the Culmen size."
   },
   {
+    "objectID": "posts/hw3/index.html",
+    "href": "posts/hw3/index.html",
+    "title": "HW3 : Message Bank Web Development Using Flask",
+    "section": "",
+    "text": "In this post, I’m going to show you how I built a simple message bank web application using Flask. This application allows users to submit messages and view a random messages that were submitted. Let’s dive into the functions that I built to make the web app."
+  },
+  {
+    "objectID": "posts/hw3/index.html#the-main-page-route",
+    "href": "posts/hw3/index.html#the-main-page-route",
+    "title": "HW3 : Message Bank Web Development Using Flask",
+    "section": "The Main Page : route(‘/’)",
+    "text": "The Main Page : route(‘/’)\nTo start with, I set the main page of the website. The route (/) is typically the entry point, the first page a user sees when they visit the web app.\n@app.route('/')\ndef index():\n    return render_template('base.html')\nWhen a visitor goes to the home page, Flask executes the index function. Then it renders base.html whuch also contains the navigation and layout."
+  },
+  {
+    "objectID": "posts/hw3/index.html#base.html",
+    "href": "posts/hw3/index.html#base.html",
+    "title": "HW3 : Message Bank Web Development Using Flask",
+    "section": "base.html",
+    "text": "base.html\n&lt;!doctype html&gt;\n&lt;link rel=\"stylesheet\" href=\"{{ url_for('static', filename='style.css') }}\"&gt;\n&lt;title&gt;{% block title %}{% endblock %} A Simple Message Bank&lt;/title&gt;\n&lt;nav&gt;   # Navigation section of the webpage\n  &lt;h1&gt;A Simple Message Bank&lt;/h1&gt;  # The site's main title or heading (same with the title above)\n  &lt;!-- &lt;b&gt;Navigation:&lt;/b&gt; --&gt;\n  &lt;ul&gt;\n    &lt;li&gt;&lt;a href=\"{{ url_for('submit') }}\"&gt;Submit a message&lt;/a&gt;&lt;/li&gt;  # Navigation link to the page for submitting messages\n    &lt;li&gt;&lt;a href=\"{{ url_for('view')}}\"&gt;View messages&lt;/a&gt;&lt;/li&gt;  # Navigation link to the page for viewing messages \n\n  &lt;/ul&gt;\n&lt;/nav&gt;\n&lt;section class=\"content\"&gt;\n  &lt;header&gt;\n    {% block header %}{% endblock %}\n  &lt;/header&gt;\n  {% block content %}{% endblock %}\n&lt;/section&gt;\nIn the base.html, I created a avigation bar to navigate to submit messages or view them. Also, I created the title, and contents, and navigation bars."
+  },
+  {
+    "objectID": "posts/hw3/index.html#message-submission-page-routesubmit",
+    "href": "posts/hw3/index.html#message-submission-page-routesubmit",
+    "title": "HW3 : Message Bank Web Development Using Flask",
+    "section": "Message Submission Page : route(‘/submit’)",
+    "text": "Message Submission Page : route(‘/submit’)\nThe submit view function allows users to submit messages. It responds to both GET and POST requests. When the route receives a GET request, it renders the submit.html template, which contains a form for the user to submit their message. When a POST request is made, which happens when a user submits the form, the insert_message function is called.\n@app.route('/submit', methods=['GET', 'POST'])\ndef submit():\n    if request.method == 'POST':\n        # If submitted, process the submitted data\n        insert_message(request)\n        return render_template('submit.html', thanks=True)\n    # If the page is requested just as GET, just show the form\n    return render_template('submit.html')\n\n![user submitting a message](Screen Shot 1.png)\n\nzsh:1: bad pattern: [user"
+  },
+  {
+    "objectID": "posts/hw3/index.html#insert_message-function",
+    "href": "posts/hw3/index.html#insert_message-function",
+    "title": "HW3 : Message Bank Web Development Using Flask",
+    "section": "insert_message function",
+    "text": "insert_message function\nThe insert_message function extracts the submitted message and the user’s name and inserts them into a SQLite database.\ndef insert_message(request):\n\n    db = get_message_db()\n    cursor = db.cursor()\n    \n    # Extract the handle and message from the given data\n    handle = request.form['handle']\n    message = request.form['message']\n    \n    # Insert the new message into the messages table\n    cursor.execute(\"INSERT INTO messages (handle, message) VALUES (?, ?)\", (handle, message))\n    db.commit()\n    cursor.close()  # Close the cursor\ncursor.execute() tells the database to add a new message into the messages table. It uses handle and message from the user’s input, and insert them into the database."
+  },
+  {
+    "objectID": "posts/hw3/index.html#get_message_db-function",
+    "href": "posts/hw3/index.html#get_message_db-function",
+    "title": "HW3 : Message Bank Web Development Using Flask",
+    "section": "get_message_db function",
+    "text": "get_message_db function\nThis function gets a connection to the database with the messages. This function tries to return database connection from Flask’s g object. If it doesn’t exist, it makes a new connection and ensures our messages table is created.\ndef get_message_db():\n\n    try:\n        # Try to return the database connection\n        return g.message_db\n    except:\n        # If it doesn't exist, create a new database \n        g.message_db = sqlite3.connect(\"messages_db.sqlite\")\n        \n        # Command to create a messages table if it does not exist\n        cmd = \"\"\"\n        CREATE TABLE IF NOT EXISTS messages (\n            id INTEGER PRIMARY KEY,\n            handle TEXT,\n            message TEXT\n        )\n        \"\"\"\n        \n        # Create a cursor to execute the SQL command\n        cursor = g.message_db.cursor()\n        cursor.execute(cmd)\n        \n        # Return the connection\n        return g.message_db\nAfter running the code, it returns sqlite3 connection to the messages database."
+  },
+  {
+    "objectID": "posts/hw3/index.html#message-view-page-routeview",
+    "href": "posts/hw3/index.html#message-view-page-routeview",
+    "title": "HW3 : Message Bank Web Development Using Flask",
+    "section": "Message View Page : route(‘/view’)",
+    "text": "Message View Page : route(‘/view’)\nView route and the random_messages function allows to show random messages\n@app.route('/view')\ndef view():\n    msgs = random_messages(5)  # 5 random messages from the database\n    return render_template('view.html', messages=msgs)"
+  },
+  {
+    "objectID": "posts/hw3/index.html#random_messages-function",
+    "href": "posts/hw3/index.html#random_messages-function",
+    "title": "HW3 : Message Bank Web Development Using Flask",
+    "section": "random_messages function",
+    "text": "random_messages function\ndef random_messages(n):\n\n    db = get_message_db()\n    cursor = db.cursor()\n    \n    # Fetch n random messages from the database\n    # If there are fewer than n messages, fetch all available messages.\n    query = \"SELECT handle, message FROM messages ORDER BY RANDOM() LIMIT ?\"\n   \n    # Fetch the results of the query\n    cursor.execute(query, (n,))\n    random_msgs = cursor.fetchall()\n    \n    db.close()  # Close the database connection\n    return random_msgs\n\n![user viewing submitted messages](Screen Shot 2.png)\n\nThe random_messages function allows to pick specific number of random rows from the database, and return those random messages."
+  },
+  {
     "objectID": "posts/hw1/index.html",
     "href": "posts/hw1/index.html",
     "title": "HW1 : Visualizing Climate Data using Query & Database",
@@ -74,6 +130,6 @@
     "href": "index.html",
     "title": "BlogPic16B",
     "section": "",
-    "text": "HW1 : Visualizing Climate Data using Query & Database\n\n\n\n\n\n\nweek 2\n\n\nweek 3\n\n\nHW\n\n\n\n\n\n\n\n\n\nJan 29, 2024\n\n\nDonggyu Kim\n\n\n\n\n\n\n\n\n\n\n\n\nHW0 Creating Post\n\n\n\n\n\n\nweek 1\n\n\nHW\n\n\n\n\n\n\n\n\n\nJan 22, 2024\n\n\nDonggyu Kim\n\n\n\n\n\n\nNo matching items"
+    "text": "HW3 : Message Bank Web Development Using Flask\n\n\n\n\n\n\nweek 4\n\n\nweek 5\n\n\nHW\n\n\n\n\n\n\n\n\n\nFeb 14, 2024\n\n\nDonggyu Kim\n\n\n\n\n\n\n\n\n\n\n\n\nHW1 : Visualizing Climate Data using Query & Database\n\n\n\n\n\n\nweek 2\n\n\nweek 3\n\n\nHW\n\n\n\n\n\n\n\n\n\nJan 29, 2024\n\n\nDonggyu Kim\n\n\n\n\n\n\n\n\n\n\n\n\nHW0 Creating Post\n\n\n\n\n\n\nweek 1\n\n\nHW\n\n\n\n\n\n\n\n\n\nJan 22, 2024\n\n\nDonggyu Kim\n\n\n\n\n\n\nNo matching items"
   }
 ]
