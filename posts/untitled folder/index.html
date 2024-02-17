@@ -207,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="write-the-scraper">Write the Scraper</h2>
 <p>Now we will write a scraper using the scrapy.</p>
 <p>The basic format of the scraper look like :</p>
-<div id="7316e3eb" class="cell" data-execution_count="4">
+<div id="7316e3eb" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TmdbSpider(scrapy.Spider):</span>
@@ -221,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="instruction" class="level4">
 <h4 class="anchored" data-anchor-id="instruction">Instruction :</h4>
 <p>parse(self, response) should assume that you start on a movie page, and then navigate to the Full Cast &amp; Crew page. Remember that this page has url <movie_url>cast. (You are allowed to hardcode that part.) Once there, the parse_full_credits(self,response) should be called, by specifying this method in the callback argument to a yielded scrapy.Request. The parse() method does not return any data. This method should be no more than 5 lines of code, excluding comments and docstrings.</movie_url></p>
-<div id="1372958b" class="cell" data-execution_count="5">
+<div id="1372958b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Make the full cast URL by adding "/cast" </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    full_cast_url <span class="op">=</span> response.url <span class="op">+</span> <span class="st">"/cast"</span></span>
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="instruction-1" class="level4">
 <h4 class="anchored" data-anchor-id="instruction-1">Instruction :</h4>
 <p>parse_full_credits(self, response) should assume that you start on the Full Cast &amp; Crew page. Its purpose is to yield a scrapy.Request for the page of each actor listed on the page. Crew members are not included. The yielded request should specify the method parse_actor_page(self, response) should be called when the actor’s page is reached. The parse_full_credits() method does not return any data. This method should be no more than 5 lines of code, excluding comments and docstrings.</p>
-<div id="c84a3b94" class="cell" data-execution_count="6">
+<div id="c84a3b94" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_full_credits(<span class="va">self</span>, response):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use selectors to extract only the cast members, which does not have class 'crew'</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    cast <span class="op">=</span> response.css(<span class="st">'ol.people.credits:not(.crew)'</span>)</span>
@@ -274,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="instruction-2" class="level4">
 <h4 class="anchored" data-anchor-id="instruction-2">Instruction :</h4>
 <p>parse_actor_page(self, response) should assume that you start on the page of an actor. It should yield a dictionary with two key-value pairs, of the form {“actor” : actor_name, “movie_or_TV_name” : movie_or_TV_name}. The method should yield one such dictionary for each of the movies or TV shows on which that actor has worked in an “Acting” role1. Note that you will need to determine both the name of the actor and the name of each movie or TV show. This method should be no more than 15 lines of code, excluding comments and docstrings.</p>
-<div id="34c46b48" class="cell" data-execution_count="7">
+<div id="34c46b48" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_actor_page(<span class="va">self</span>, response):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract actor's name from h2 tag class title</span></span>
@@ -340,14 +340,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="make-the-recommendations" class="level2">
 <h2 class="anchored" data-anchor-id="make-the-recommendations">Make the Recommendations</h2>
 <p>Based on the data of actors and the movie they acted in, we can make a recommandation of the specific movie(here it is Harry Potter and the Philosopher’s Stone).</p>
-<div id="7d4579fb" class="cell" data-execution_count="9">
+<div id="7d4579fb" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the CSV file</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>results_df <span class="op">=</span> pd.read_csv(<span class="st">'/Users/gimdong-gyu/Desktop/TMDB_scraper/results.csv'</span>)</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>results_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -424,7 +424,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>We can see there are 2922 rows, which means there are total 2922 movies that every cast had a roll in.</p>
 <p>But we need to group those actors that were in the same movie and count them in order to see which movie has the most shared actor. Also we can make a recommandation based on the most shared movies.</p>
-<div id="7ebbd09e" class="cell" data-execution_count="10">
+<div id="7ebbd09e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group by the 'movie_or_TV_name' and count the number of unique actors.</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>shared_actors <span class="op">=</span> results_df.groupby(<span class="st">'movie_or_TV_name'</span>)[<span class="st">'actor'</span>].nunique().reset_index()</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>shared_actors.columns <span class="op">=</span> [<span class="st">'movie names'</span>, <span class="st">'number of shared actors'</span>]</span>
@@ -432,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by the number of shared actors </span></span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>shared_sorted <span class="op">=</span> shared_actors.sort_values(by<span class="op">=</span><span class="st">'number of shared actors'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>shared_sorted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -508,7 +508,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Now we want to visualize the top 10 movies that shows the most shared actors. To do this, We can use matplotlib to create a bar chart</p>
-<div id="ac110f0c" class="cell" data-execution_count="11">
+<div id="ac110f0c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the top 10 movies/TV shows</span></span>
@@ -534,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Therefore We will make a seperate recommandation plot that does not contain Harry Potter Series.</p>
 <section id="recommandation-other-than-harry-potter-series" class="level3">
 <h3 class="anchored" data-anchor-id="recommandation-other-than-harry-potter-series">Recommandation Other than Harry Potter Series</h3>
-<div id="0bbd1ce2" class="cell" data-execution_count="12">
+<div id="0bbd1ce2" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove movies that contain "Harry Potter" in the title.</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>no_harry <span class="op">=</span> shared_sorted[<span class="op">~</span>shared_sorted[<span class="st">'movie names'</span>].<span class="bu">str</span>.contains(<span class="st">'Harry Potter'</span>)]</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
