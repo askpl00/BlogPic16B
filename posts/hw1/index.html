@@ -437,7 +437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="how-does-the-average-yearly-change-in-temperature-vary-within-a-given-country">How does the average yearly change in temperature vary within a given country?</h3>
 <p>In order to answer this question, we will create a function to visualize the increase in temperature for different stations in one country.</p>
 <p>The compute_coef function uses linear regression to estimate the rate of temperature change, and temperature_coefficient_plot generates an interactive geographic scatterplot using Plotly Express.</p>
-<div id="aad7c6da" class="cell" data-execution_count="43">
+<div id="aad7c6da" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -516,7 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>                            color_continuous_scale<span class="op">=</span>kwargs.get(<span class="st">'color_continuous_scale'</span>, px.colors.diverging.RdYlBu))</span>
 <span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Layout update to include title and centered color bar</span></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>    fig.update_layout(title<span class="op">=</span><span class="ss">f"Estimates of Yearly Increase in Temperature in </span><span class="sc">{</span>month_name<span class="sc">}</span><span class="ss"> in </span><span class="sc">{</span>country<span class="sc">}</span><span class="ss">, Years </span><span class="sc">{</span>year_begin<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span>year_end<span class="sc">}</span><span class="ss">"</span>, </span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>    fig.update_layout(title<span class="op">=</span><span class="ss">f"Estimated Yearly Increase of Temperature in </span><span class="sc">{</span>month_name<span class="sc">}</span><span class="ss"> in </span><span class="sc">{</span>country<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>year_begin<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span>year_end<span class="sc">}</span><span class="ss">"</span>, </span>
 <span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a>                      coloraxis_colorbar<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">"Yearly Increase (°C)"</span>))</span>
 <span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -525,7 +525,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="geographic-scatterplot-of-estimated-yearly-increases-in-january-1980-2020-india" class="level3">
 <h3 class="anchored" data-anchor-id="geographic-scatterplot-of-estimated-yearly-increases-in-january-1980-2020-india">Geographic Scatterplot of Estimated Yearly Increases in January, 1980-2020, India</h3>
-<div id="35a10194" class="cell" data-execution_count="44">
+<div id="35a10194" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assumes you have imported necessary packages</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>color_map <span class="op">=</span> px.colors.diverging.RdGy_r <span class="co"># choose a colormap</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -538,14 +538,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<iframe scrolling="no" width="100%" height="520" src="iframe_figures/figure_44.html" frameborder="0" allowfullscreen=""></iframe>
+<iframe scrolling="no" width="100%" height="520" src="iframe_figures/figure_54.html" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 </section>
 <section id="geographic-scatterplot-of-estimated-yearly-increases-in-march-1998-2023-south-korea" class="level3">
 <h3 class="anchored" data-anchor-id="geographic-scatterplot-of-estimated-yearly-increases-in-march-1998-2023-south-korea">Geographic Scatterplot of Estimated Yearly Increases in March, 1998-2023, South Korea</h3>
 <p>Another example that shows the geographic scatterplot of a different time and country.</p>
-<div id="38fe6b73" class="cell" data-execution_count="52">
+<div id="84dd1cb5" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> temperature_coefficient_plot(<span class="st">"climate_data.db"</span>,</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Korea, South"</span>, <span class="dv">1998</span>, <span class="dv">2023</span>, <span class="dv">3</span>, </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                                   min_obs <span class="op">=</span> <span class="dv">10</span>,</span>
@@ -554,7 +554,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<iframe scrolling="no" width="100%" height="520" src="iframe_figures/figure_52.html" frameborder="0" allowfullscreen=""></iframe>
+<iframe scrolling="no" width="100%" height="520" src="iframe_figures/figure_56.html" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 </section>
