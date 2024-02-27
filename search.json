@@ -60,7 +60,7 @@
     "href": "posts/hw3/index.html#overview-of-the-message-bank-web",
     "title": "HW3 : Message Bank Web Development Using Flask",
     "section": "Overview of the Message Bank Web",
-    "text": "Overview of the Message Bank Web\nThere are two big features in my web app. 1. Message Submission : Users can submit messages with their names. 2. Message Viewing : Users can view their provious subimitted messages."
+    "text": "Overview of the Message Bank Web\nThere are two big features in my web app.\n\nMessage Submission : Users can submit messages with their names.\nMessage Viewing : Users can view their provious subimitted messages."
   },
   {
     "objectID": "posts/hw3/index.html#the-main-page-route",
@@ -81,7 +81,7 @@
     "href": "posts/hw3/index.html#message-submission-page-routesubmit",
     "title": "HW3 : Message Bank Web Development Using Flask",
     "section": "Message Submission Page : route(‘/submit’)",
-    "text": "Message Submission Page : route(‘/submit’)\nThe message submission feature consists a simple form where users can enter their name and message.\nThe submit view function allows users to submit messages. It responds to both GET and POST requests. When the route receives a GET request, it renders the submit.html template, which contains a form for the user to submit their message. For a POST request, which happens when a user submits the form, it processes the submitted data by calling insert_message(request) and renders the template with a message.\n@app.route('/submit', methods=['GET', 'POST'])\ndef submit():\n    if request.method == 'POST':\n        # If submitted, process the submitted data\n        insert_message(request)\n        return render_template('submit.html', thanks=True)\n    # If the page is requested just as GET, just show the form\n    return render_template('submit.html')\n\n![User submitting a message](/Users/gimdong-gyu/BlogPic16B/posts/hw3/ScreenShot1.png)\n\nzsh:1: bad pattern: [User"
+    "text": "Message Submission Page : route(‘/submit’)\nThe message submission feature consists a simple form where users can enter their name and message.\nThe submit view function allows users to submit messages. It responds to both GET and POST requests. When the route receives a GET request, it renders the submit.html template, which contains a form for the user to submit their message. For a POST request, which happens when a user submits the form, it processes the submitted data by calling insert_message(request) and renders the template with a message.\n@app.route('/submit', methods=['GET', 'POST'])\ndef submit():\n    if request.method == 'POST':\n        # If submitted, process the submitted data\n        insert_message(request)\n        return render_template('submit.html', thanks=True)\n    # If the page is requested just as GET, just show the form\n    return render_template('submit.html')\n\n\n\nUser submitting a message"
   },
   {
     "objectID": "posts/hw3/index.html#insert_message-function",
@@ -109,7 +109,7 @@
     "href": "posts/hw3/index.html#random_messages-function",
     "title": "HW3 : Message Bank Web Development Using Flask",
     "section": "random_messages function",
-    "text": "random_messages function\ndef random_messages(n):\n\n    db = get_message_db()\n    cursor = db.cursor()\n    \n    # Fetch n random messages from the database\n    # If there are fewer than n messages, fetch all available messages.\n    query = \"SELECT handle, message FROM messages ORDER BY RANDOM() LIMIT ?\"\n   \n    # Fetch the results of the query\n    cursor.execute(query, (n,))\n    random_msgs = cursor.fetchall()\n    \n    db.close()  # Close the database connection\n    return random_msgs\nThe random_messages function picks a certain number of messages randomly from a list saved in the database, showing different messages each time users refresh. It connects to the database, chooses messages randomly up to the number asked for, stops the connection to save resources, and then gives back the messages it picked."
+    "text": "random_messages function\ndef random_messages(n):\n\n    db = get_message_db()\n    cursor = db.cursor()\n    \n    # Fetch n random messages from the database\n    # If there are fewer than n messages, fetch all available messages.\n    query = \"SELECT handle, message FROM messages ORDER BY RANDOM() LIMIT ?\"\n   \n    # Fetch the results of the query\n    cursor.execute(query, (n,))\n    random_msgs = cursor.fetchall()\n    \n    db.close()  # Close the database connection\n    return random_msgs\nThe random_messages function picks a certain number of messages randomly from a list saved in the database, showing different messages each time users refresh. It connects to the database, chooses messages randomly up to the number asked for, stops the connection to save resources, and then gives back the messages it picked.\n\n\n\nUser submitting a message"
   },
   {
     "objectID": "posts/untitled folder/index.html",
