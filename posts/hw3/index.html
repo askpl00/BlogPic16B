@@ -191,14 +191,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>URL for the Github repo : https://github.com/askpl00/flask_hw3_16B/tree/main</p>
-<p>In this post, I’m going to show you how I built a simple message bank web application using Flask. This application allows users to submit messages and view a random messages that were submitted. Let’s dive into the functions that I built to make the web app.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this post, I’m going to show you how I built a simple message bank web application using Flask. This web application allows users to submit messages and view a random messages that were submitted. It also contains the concepts of databse interaction and basic CSS styling. Let’s dive into the functions that I built to make the web app.</p>
+<section id="overview-of-the-message-bank-web" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-the-message-bank-web">Overview of the Message Bank Web</h2>
+<p>There are two big features in my web app. 1. Message Submission : Users can submit messages with their names. 2. Message Viewing : Users can view their provious subimitted messages.</p>
+</section>
 <section id="the-main-page-route" class="level2">
 <h2 class="anchored" data-anchor-id="the-main-page-route">The Main Page : route(‘/’)</h2>
-<p>To start with, I set the main page of the website. The route (/) is typically the entry point, the first page a user sees when they visit the web app.</p>
+<p>To start with, I set the main page of the website. The route (/) is the entry point, which is the first page a user sees when they visit the web app.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">'/'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> index():</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render_template(<span class="st">'base.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>When a visitor goes to the home page, Flask executes the index function. Then it renders base.html whuch also contains the navigation and layout.</p>
+<p>When a visitor goes to the home page, Flask executes the index function. This function uses Flask’s <span class="citation" data-cites="app.route">@app.route</span> to tell Flask which URL should trigger our function. Then it renders base.html whuch also contains the navigation and layout.</p>
 </section>
 <section id="base.html" class="level2">
 <h2 class="anchored" data-anchor-id="base.html">base.html</h2>
@@ -220,11 +226,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;/</span>header<span class="op">&gt;</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  {<span class="op">%</span> block content <span class="op">%</span>}{<span class="op">%</span> endblock <span class="op">%</span>}</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>section<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In the base.html, I created a avigation bar to navigate to submit messages or view them. Also, I created the title, and contents, and navigation bars.</p>
+<p>In base.html, a navigation bar is established, providing users to submit and view messages. It also sets a title, “A Simple Message Bank”. Page sections for content and headers are defined, and it enables to navigate link to the page for submitting messages or for viewing messages.</p>
 </section>
 <section id="message-submission-page-routesubmit" class="level2">
 <h2 class="anchored" data-anchor-id="message-submission-page-routesubmit">Message Submission Page : route(‘/submit’)</h2>
-<p>The submit view function allows users to submit messages. It responds to both GET and POST requests. When the route receives a GET request, it renders the submit.html template, which contains a form for the user to submit their message. When a POST request is made, which happens when a user submits the form, the insert_message function is called.</p>
+<p>The message submission feature consists a simple form where users can enter their name and message.</p>
+<p>The submit view function allows users to submit messages. It responds to both GET and POST requests. When the route receives a GET request, it renders the submit.html template, which contains a form for the user to submit their message. For a POST request, which happens when a user submits the form, it processes the submitted data by calling insert_message(request) and renders the template with a message.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">'/submit'</span>, methods<span class="op">=</span>[<span class="st">'GET'</span>, <span class="st">'POST'</span>])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> submit():</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
@@ -233,22 +240,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render_template(<span class="st">'submit.html'</span>, thanks<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the page is requested just as GET, just show the form</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render_template(<span class="st">'submit.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="728205a2" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>[user submitting a message](Screen Shot <span class="fl">1.</span><span class="er">png</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="728205a2" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>[User submitting a message](<span class="op">/</span>Users<span class="op">/</span>gimdong<span class="op">-</span>gyu<span class="op">/</span>BlogPic16B<span class="op">/</span>posts<span class="op">/</span>hw3<span class="op">/</span>ScreenShot1.png)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>zsh:1: bad pattern: [user</code></pre>
+<pre><code>zsh:1: bad pattern: [User</code></pre>
 </div>
 </div>
 </section>
 <section id="insert_message-function" class="level2">
 <h2 class="anchored" data-anchor-id="insert_message-function">insert_message function</h2>
-<p>The insert_message function extracts the submitted message and the user’s name and inserts them into a SQLite database.</p>
+<p>The insert_message function extracts the submitted message and the user’s name and inserts them into database.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> insert_message(request):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    db <span class="op">=</span> get_message_db()</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> db.cursor()</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract the handle and message from the given data</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract the message and the handle from the given data</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    handle <span class="op">=</span> request.form[<span class="st">'handle'</span>]</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    message <span class="op">=</span> request.form[<span class="st">'message'</span>]</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -256,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">"INSERT INTO messages (handle, message) VALUES (?, ?)"</span>, (handle, message))</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    db.commit()</span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    cursor.close()  <span class="co"># Close the cursor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>cursor.execute() tells the database to add a new message into the messages table. It uses handle and message from the user’s input, and insert them into the database.</p>
+<p>cursor.execute() prepares an SQL statement to insert the new message into the messages table. It tells the database to add a new message and uses handle and message from the user’s input, and insert them into the database.</p>
 </section>
 <section id="get_message_db-function" class="level2">
 <h2 class="anchored" data-anchor-id="get_message_db-function">get_message_db function</h2>
@@ -285,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Return the connection</span></span>
 <span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> g.message_db</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>After running the code, it returns sqlite3 connection to the messages database.</p>
+<p>If a connection to the messages database doesn’t already exist within g, the function establishes a new SQLite connection to “messages_db.sqlite”. Additionally, it ensures the structure of the database is prepared for use by creating a messages table. Therefore, after running the code, it returns sqlite3 connection to the messages database.</p>
 </section>
 <section id="message-view-page-routeview" class="level2">
 <h2 class="anchored" data-anchor-id="message-view-page-routeview">Message View Page : route(‘/view’)</h2>
@@ -294,6 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> view():</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    msgs <span class="op">=</span> random_messages(<span class="dv">5</span>)  <span class="co"># 5 random messages from the database</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render_template(<span class="st">'view.html'</span>, messages<span class="op">=</span>msgs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When a user navigates to the ‘/view’ URL, the view() function is called. The view route in a Flask application displays messages from the database. It uses random_messages(5) to fetch a random sample of 5 messages. These messages goes to render_template to be displayed on ‘view.html’, offering differnt messages and names.</p>
 </section>
 <section id="random_messages-function" class="level2">
 <h2 class="anchored" data-anchor-id="random_messages-function">random_messages function</h2>
@@ -312,9 +320,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    db.close()  <span class="co"># Close the database connection</span></span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> random_msgs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The random_messages function allows to pick specific number of random rows from the database, and return those random messages.</p>
+<p>The random_messages function picks a certain number of messages randomly from a list saved in the database, showing different messages each time users refresh. It connects to the database, chooses messages randomly up to the number asked for, stops the connection to save resources, and then gives back the messages it picked.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
