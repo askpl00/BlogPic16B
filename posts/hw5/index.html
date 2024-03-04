@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.547">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>BlogPic16B</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">BlogPic16B</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div id="cell-1" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras <span class="im">import</span> utils</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow_datasets <span class="im">as</span> tfds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-2" class="cell" data-outputid="fea23592-1553-4f4e-9e67-a726d30e7c38" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>train_ds, validation_ds, test_ds <span class="op">=</span> tfds.load(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cats_vs_dogs"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 40% for training, 10% for validation, and 10% for test (the rest unused)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    split<span class="op">=</span>[<span class="st">"train[:40%]"</span>, <span class="st">"train[40%:50%]"</span>, <span class="st">"train[50%:60%]"</span>],</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    as_supervised<span class="op">=</span><span class="va">True</span>,  <span class="co"># Include labels</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of training samples: </span><span class="sc">{</span>train_ds<span class="sc">.</span>cardinality()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of validation samples: </span><span class="sc">{</span>validation_ds<span class="sc">.</span>cardinality()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of test samples: </span><span class="sc">{</span>test_ds<span class="sc">.</span>cardinality()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Downloading and preparing dataset 786.67 MiB (download: 786.67 MiB, generated: 1.04 GiB, total: 1.81 GiB) to /root/tensorflow_datasets/cats_vs_dogs/4.0.1...
+Dataset cats_vs_dogs downloaded and prepared to /root/tensorflow_datasets/cats_vs_dogs/4.0.1. Subsequent calls will reuse this data.
+Number of training samples: 9305
+Number of validation samples: 2326
+Number of test samples: 2326</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major":2,"version_minor":0,"model_id":"1cd20887045d4decaede732358321f1f","quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major":2,"version_minor":0,"model_id":"9ac30b583a60445182bf261e5d79bede","quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major":2,"version_minor":0,"model_id":"2cfa54deb817426f965f031eab21b09a","quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major":2,"version_minor":0,"model_id":"0cba5818d81d4883bef6ea10c4d1e4ee","quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>WARNING:absl:1738 images were corrupted and were skipped</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major":2,"version_minor":0,"model_id":"84805c670b1e4e5186395353db8e39eb","quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
+<div id="cell-3" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> keras</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-4" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>resize_fn <span class="op">=</span> keras.layers.Resizing(<span class="dv">150</span>, <span class="dv">150</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> train_ds.<span class="bu">map</span>(<span class="kw">lambda</span> x, y: (resize_fn(x), y))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>validation_ds <span class="op">=</span> validation_ds.<span class="bu">map</span>(<span class="kw">lambda</span> x, y: (resize_fn(x), y))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>test_ds <span class="op">=</span> test_ds.<span class="bu">map</span>(<span class="kw">lambda</span> x, y: (resize_fn(x), y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow <span class="im">import</span> data <span class="im">as</span> tf_data</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">64</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> train_ds.batch(batch_size).prefetch(tf_data.AUTOTUNE).cache()</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>validation_ds <span class="op">=</span> validation_ds.batch(batch_size).prefetch(tf_data.AUTOTUNE).cache()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>test_ds <span class="op">=</span> test_ds.batch(batch_size).prefetch(tf_data.AUTOTUNE).cache()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-6" class="cell" data-outputid="902d05be-33bb-433c-8554-957aeb62ccc5" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> visualization(train_ds):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    cat_images <span class="op">=</span> []</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    dog_images <span class="op">=</span> []</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get first three images of cats and dogs</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> images, labels <span class="kw">in</span> train_ds.unbatch().as_numpy_iterator():</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> labels <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> <span class="bu">len</span>(cat_images) <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>            cat_images.append(images)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> labels <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> <span class="bu">len</span>(dog_images) <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>            dog_images.append(images)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):  <span class="co"># First three cats</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">2</span>, <span class="dv">3</span>, i <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>        plt.imshow(cat_images[i].astype(<span class="st">"uint8"</span>))</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">"off"</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="st">"Cat"</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):  <span class="co"># First three dogs</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">2</span>, <span class="dv">3</span>, i <span class="op">+</span> <span class="dv">4</span>)  <span class="co"># Dogs start from the 4th position</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>        plt.imshow(dog_images[i].astype(<span class="st">"uint8"</span>))</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">"off"</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="st">"Dog"</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>visualization(train_ds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-7" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>labels_iterator<span class="op">=</span> train_ds.unbatch().<span class="bu">map</span>(<span class="kw">lambda</span> image, label: label).as_numpy_iterator()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-8" class="cell" data-outputid="ceaa5bcd-bb1e-4067-ca13-fdb279877546" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cat_count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>dog_count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate in the dataset and count cats and dogs</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label <span class="kw">in</span> labels_iterator:</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> label <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        cat_count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> label <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        dog_count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of cat images: </span><span class="sc">{</span>cat_count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of dog images: </span><span class="sc">{</span>dog_count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the baseline model accuracy</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>total_images <span class="op">=</span> cat_count <span class="op">+</span> dog_count</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>most_frequent_label_count <span class="op">=</span> <span class="bu">max</span>(cat_count, dog_count)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>baseline_accuracy <span class="op">=</span> most_frequent_label_count <span class="op">/</span> total_images</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Baseline model accuracy: </span><span class="sc">{</span>baseline_accuracy<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of cat images: 4637
+Number of dog images: 4668
+Baseline model accuracy: 0.50</code></pre>
+</div>
+</div>
+<div id="cell-9" class="cell" data-outputid="38d4b0c9-9b7d-42fa-b5c8-7390d2f54792" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras <span class="im">import</span> datasets, layers, models</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>model1 <span class="op">=</span> models.Sequential([</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    layers.Input((<span class="dv">150</span>, <span class="dv">150</span>, <span class="dv">3</span>)),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># First Convolutional Block</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">32</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Second Convolutional Block</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">64</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    layers.Flatten(),</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    layers.Dropout(<span class="fl">0.2</span>),</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">1</span>, activation<span class="op">=</span><span class="st">'sigmoid'</span>)   <span class="co"># for binary classification</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Compile the model</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>model1.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">'adam'</span>,</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>              loss<span class="op">=</span><span class="st">'binary_crossentropy'</span>,    <span class="co"># for binary classification</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>              metrics<span class="op">=</span>[<span class="st">'accuracy'</span>])</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>model1.summary()</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the model</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> model1.fit(train_ds,</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>                     epochs<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>                     validation_data<span class="op">=</span>validation_ds)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the training and validation accuracy</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"accuracy"</span>], label <span class="op">=</span> <span class="st">"training"</span>)</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"val_accuracy"</span>], label <span class="op">=</span> <span class="st">"validation"</span>)</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"epoch"</span>, ylabel <span class="op">=</span> <span class="st">"accuracy"</span>)</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 148, 148, 32)      896       
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 74, 74, 32)        0         
+ D)                                                              
+                                                                 
+ conv2d_1 (Conv2D)           (None, 72, 72, 64)        18496     
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 36, 36, 64)        0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 82944)             0         
+                                                                 
+ dense (Dense)               (None, 64)                5308480   
+                                                                 
+ dropout (Dropout)           (None, 64)                0         
+                                                                 
+ dense_1 (Dense)             (None, 1)                 65        
+                                                                 
+=================================================================
+Total params: 5327937 (20.32 MB)
+Trainable params: 5327937 (20.32 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/20
+146/146 [==============================] - 18s 70ms/step - loss: 28.7778 - accuracy: 0.5525 - val_loss: 0.6760 - val_accuracy: 0.5722
+Epoch 2/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.6321 - accuracy: 0.6361 - val_loss: 0.6730 - val_accuracy: 0.5881
+Epoch 3/20
+146/146 [==============================] - 5s 34ms/step - loss: 0.5104 - accuracy: 0.7269 - val_loss: 0.7193 - val_accuracy: 0.5937
+Epoch 4/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.4314 - accuracy: 0.7783 - val_loss: 0.8652 - val_accuracy: 0.5830
+Epoch 5/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.3516 - accuracy: 0.8275 - val_loss: 1.0036 - val_accuracy: 0.6015
+Epoch 6/20
+146/146 [==============================] - 5s 33ms/step - loss: 0.2980 - accuracy: 0.8598 - val_loss: 1.1715 - val_accuracy: 0.6337
+Epoch 7/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.2789 - accuracy: 0.8848 - val_loss: 1.5469 - val_accuracy: 0.5985
+Epoch 8/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.2414 - accuracy: 0.8921 - val_loss: 1.3987 - val_accuracy: 0.6071
+Epoch 9/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.1998 - accuracy: 0.9207 - val_loss: 1.3468 - val_accuracy: 0.6066
+Epoch 10/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.2025 - accuracy: 0.9237 - val_loss: 1.5451 - val_accuracy: 0.5929
+Epoch 11/20
+146/146 [==============================] - 5s 33ms/step - loss: 0.1972 - accuracy: 0.9265 - val_loss: 1.7485 - val_accuracy: 0.5933
+Epoch 12/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.1592 - accuracy: 0.9425 - val_loss: 2.0177 - val_accuracy: 0.5997
+Epoch 13/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.1185 - accuracy: 0.9599 - val_loss: 1.9909 - val_accuracy: 0.6019
+Epoch 14/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.1056 - accuracy: 0.9607 - val_loss: 1.9737 - val_accuracy: 0.6015
+Epoch 15/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.0907 - accuracy: 0.9673 - val_loss: 2.3578 - val_accuracy: 0.6174
+Epoch 16/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.0813 - accuracy: 0.9707 - val_loss: 2.7964 - val_accuracy: 0.6071
+Epoch 17/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.0795 - accuracy: 0.9759 - val_loss: 2.4799 - val_accuracy: 0.6045
+Epoch 18/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.0685 - accuracy: 0.9759 - val_loss: 2.7452 - val_accuracy: 0.6023
+Epoch 19/20
+146/146 [==============================] - 5s 33ms/step - loss: 0.0693 - accuracy: 0.9785 - val_loss: 2.4840 - val_accuracy: 0.6204
+Epoch 20/20
+146/146 [==============================] - 5s 32ms/step - loss: 0.0517 - accuracy: 0.9838 - val_loss: 2.7648 - val_accuracy: 0.6109</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-10" class="cell" data-outputid="77c5832d-8114-4215-8ac2-c609e23b84f6" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> images, _ <span class="kw">in</span> train_ds.take(<span class="dv">1</span>):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    original_image <span class="op">=</span> images[<span class="dv">50</span>]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">12</span>))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Original image</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    plt.imshow(original_image.numpy().astype(<span class="st">"uint8"</span>))</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">"Original"</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    plt.axis(<span class="st">"off"</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random Flip</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    flip <span class="op">=</span> layers.RandomFlip(<span class="st">"horizontal_and_vertical"</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">9</span>):</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">4</span>, <span class="dv">4</span>, i)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        flip_image <span class="op">=</span> flip(original_image, training<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        plt.imshow(flip_image.numpy().astype(<span class="st">"uint8"</span>))</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="st">"Flip"</span>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">"off"</span>)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random Rotation</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    rotation <span class="op">=</span> layers.RandomRotation(<span class="fl">0.2</span>)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">9</span>, <span class="dv">17</span>):</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>        plt.subplot(<span class="dv">4</span>, <span class="dv">4</span>, i)</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>        rotate_image <span class="op">=</span> rotation(original_image, training<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>        plt.imshow(rotate_image.numpy().astype(<span class="st">"uint8"</span>))</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="st">"Rotation"</span>)</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">"off"</span>)</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-11" class="cell" data-outputid="a619bbd3-3436-46d2-a1c7-54edd374fd7a" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras <span class="im">import</span> layers, models, optimizers, losses</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>model2 <span class="op">=</span> models.Sequential([</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    layers.Input((<span class="dv">150</span>, <span class="dv">150</span>, <span class="dv">3</span>)),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#RandomFlip() layer and a RandomRotation() layer</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    layers.RandomFlip(<span class="st">"horizontal_and_vertical"</span>),</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    layers.RandomRotation(<span class="fl">0.2</span>),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">32</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">64</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    layers.Flatten(),</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    layers.Dropout(<span class="fl">0.2</span>),</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">1</span>, activation<span class="op">=</span><span class="st">'sigmoid'</span>)</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>model2.<span class="bu">compile</span>(optimizer <span class="op">=</span> <span class="st">'adam'</span>,</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>              loss<span class="op">=</span>losses.BinaryCrossentropy(from_logits<span class="op">=</span><span class="va">False</span>),</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>              metrics <span class="op">=</span> [<span class="st">'accuracy'</span>])</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>model2.summary()</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> model2.fit(train_ds,</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>                     epochs<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>                     validation_data<span class="op">=</span>validation_ds)</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"accuracy"</span>], label <span class="op">=</span> <span class="st">"training"</span>)</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"val_accuracy"</span>], label <span class="op">=</span> <span class="st">"validation"</span>)</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"epoch"</span>, ylabel <span class="op">=</span> <span class="st">"accuracy"</span>)</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ random_flip_1 (RandomFlip)  (None, 150, 150, 3)       0         
+                                                                 
+ random_rotation_1 (RandomR  (None, 150, 150, 3)       0         
+ otation)                                                        
+                                                                 
+ conv2d_2 (Conv2D)           (None, 148, 148, 32)      896       
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 74, 74, 32)        0         
+ g2D)                                                            
+                                                                 
+ conv2d_3 (Conv2D)           (None, 72, 72, 64)        18496     
+                                                                 
+ max_pooling2d_3 (MaxPoolin  (None, 36, 36, 64)        0         
+ g2D)                                                            
+                                                                 
+ flatten_1 (Flatten)         (None, 82944)             0         
+                                                                 
+ dense_2 (Dense)             (None, 64)                5308480   
+                                                                 
+ dropout_1 (Dropout)         (None, 64)                0         
+                                                                 
+ dense_3 (Dense)             (None, 1)                 65        
+                                                                 
+=================================================================
+Total params: 5327937 (20.32 MB)
+Trainable params: 5327937 (20.32 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/20
+146/146 [==============================] - 8s 38ms/step - loss: 31.7002 - accuracy: 0.5430 - val_loss: 0.6609 - val_accuracy: 0.5791
+Epoch 2/20
+146/146 [==============================] - 5s 36ms/step - loss: 0.6764 - accuracy: 0.5846 - val_loss: 0.6701 - val_accuracy: 0.5804
+Epoch 3/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.6670 - accuracy: 0.5731 - val_loss: 0.6599 - val_accuracy: 0.6187
+Epoch 4/20
+146/146 [==============================] - 5s 36ms/step - loss: 0.6628 - accuracy: 0.5884 - val_loss: 0.6694 - val_accuracy: 0.5873
+Epoch 5/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.6718 - accuracy: 0.5790 - val_loss: 0.6574 - val_accuracy: 0.6096
+Epoch 6/20
+146/146 [==============================] - 5s 37ms/step - loss: 0.6585 - accuracy: 0.6124 - val_loss: 0.6539 - val_accuracy: 0.5993
+Epoch 7/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.6421 - accuracy: 0.6343 - val_loss: 0.6362 - val_accuracy: 0.6285
+Epoch 8/20
+146/146 [==============================] - 5s 36ms/step - loss: 0.6518 - accuracy: 0.6232 - val_loss: 0.6345 - val_accuracy: 0.6341
+Epoch 9/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.6433 - accuracy: 0.6336 - val_loss: 0.6198 - val_accuracy: 0.6531
+Epoch 10/20
+146/146 [==============================] - 5s 36ms/step - loss: 0.6276 - accuracy: 0.6469 - val_loss: 0.6193 - val_accuracy: 0.6617
+Epoch 11/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.6197 - accuracy: 0.6502 - val_loss: 0.6208 - val_accuracy: 0.6531
+Epoch 12/20
+146/146 [==============================] - 5s 37ms/step - loss: 0.6136 - accuracy: 0.6636 - val_loss: 0.6074 - val_accuracy: 0.6763
+Epoch 13/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.6080 - accuracy: 0.6663 - val_loss: 0.6145 - val_accuracy: 0.6578
+Epoch 14/20
+146/146 [==============================] - 5s 36ms/step - loss: 0.6126 - accuracy: 0.6620 - val_loss: 0.5976 - val_accuracy: 0.6776
+Epoch 15/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.6103 - accuracy: 0.6660 - val_loss: 0.6001 - val_accuracy: 0.6745
+Epoch 16/20
+146/146 [==============================] - 5s 36ms/step - loss: 0.6027 - accuracy: 0.6742 - val_loss: 0.5892 - val_accuracy: 0.6844
+Epoch 17/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.6093 - accuracy: 0.6686 - val_loss: 0.6065 - val_accuracy: 0.6763
+Epoch 18/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.6100 - accuracy: 0.6689 - val_loss: 0.5978 - val_accuracy: 0.6849
+Epoch 19/20
+146/146 [==============================] - 5s 35ms/step - loss: 0.6030 - accuracy: 0.6685 - val_loss: 0.5957 - val_accuracy: 0.6853
+Epoch 20/20
+146/146 [==============================] - 5s 36ms/step - loss: 0.6074 - accuracy: 0.6710 - val_loss: 0.5892 - val_accuracy: 0.6939</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-13-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-12" class="cell" data-outputid="c8be1a3e-42df-4958-9d5b-9cd722421cbd" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> keras.Input(shape<span class="op">=</span>(<span class="dv">150</span>, <span class="dv">150</span>, <span class="dv">3</span>))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The pixel values have the range of (0, 255), but many models will work better if rescaled to (-1, 1.)</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># outputs: `(inputs * scale) + offset`</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>scale_layer <span class="op">=</span> keras.layers.Rescaling(scale<span class="op">=</span><span class="dv">1</span> <span class="op">/</span> <span class="fl">127.5</span>, offset<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> scale_layer(i)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>preprocessor <span class="op">=</span> keras.Model(inputs <span class="op">=</span> i, outputs <span class="op">=</span> x)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>model3 <span class="op">=</span> models.Sequential([</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    preprocessor,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    layers.RandomFlip(<span class="st">"horizontal_and_vertical"</span>),</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    layers.RandomRotation(<span class="fl">0.2</span>),</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># First Convolutional Block</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">32</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Second Convolutional Block</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">64</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Adding additional Convolutional Block to enhance the model</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    layers.Conv2D(<span class="dv">128</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>    layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>)),</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>    layers.Flatten(),</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">128</span>, activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Additional Dense layer for complexity</span></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>    layers.Dropout(<span class="fl">0.2</span>),</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">1</span>, activation<span class="op">=</span><span class="st">'sigmoid'</span>)</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>model3.<span class="bu">compile</span>(optimizer <span class="op">=</span> <span class="st">'adam'</span>,</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>              loss<span class="op">=</span>losses.BinaryCrossentropy(from_logits<span class="op">=</span><span class="va">False</span>),</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>              metrics <span class="op">=</span> [<span class="st">'accuracy'</span>])</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>model3.summary()</span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> model3.fit(train_ds,</span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>                      epochs<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>                      validation_data<span class="op">=</span>validation_ds)</span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"accuracy"</span>], label <span class="op">=</span> <span class="st">"training"</span>)</span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"val_accuracy"</span>], label <span class="op">=</span> <span class="st">"validation"</span>)</span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"epoch"</span>, ylabel <span class="op">=</span> <span class="st">"accuracy"</span>)</span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model: "sequential_2"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ model (Functional)          (None, 150, 150, 3)       0         
+                                                                 
+ random_flip_2 (RandomFlip)  (None, 150, 150, 3)       0         
+                                                                 
+ random_rotation_2 (RandomR  (None, 150, 150, 3)       0         
+ otation)                                                        
+                                                                 
+ conv2d_4 (Conv2D)           (None, 148, 148, 32)      896       
+                                                                 
+ max_pooling2d_4 (MaxPoolin  (None, 74, 74, 32)        0         
+ g2D)                                                            
+                                                                 
+ conv2d_5 (Conv2D)           (None, 72, 72, 64)        18496     
+                                                                 
+ max_pooling2d_5 (MaxPoolin  (None, 36, 36, 64)        0         
+ g2D)                                                            
+                                                                 
+ conv2d_6 (Conv2D)           (None, 34, 34, 128)       73856     
+                                                                 
+ max_pooling2d_6 (MaxPoolin  (None, 17, 17, 128)       0         
+ g2D)                                                            
+                                                                 
+ flatten_2 (Flatten)         (None, 36992)             0         
+                                                                 
+ dense_4 (Dense)             (None, 128)               4735104   
+                                                                 
+ dense_5 (Dense)             (None, 64)                8256      
+                                                                 
+ dropout_2 (Dropout)         (None, 64)                0         
+                                                                 
+ dense_6 (Dense)             (None, 1)                 65        
+                                                                 
+=================================================================
+Total params: 4836673 (18.45 MB)
+Trainable params: 4836673 (18.45 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/20
+146/146 [==============================] - 10s 47ms/step - loss: 0.6571 - accuracy: 0.6048 - val_loss: 0.5811 - val_accuracy: 0.6943
+Epoch 2/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.5950 - accuracy: 0.6846 - val_loss: 0.5476 - val_accuracy: 0.7206
+Epoch 3/20
+146/146 [==============================] - 6s 43ms/step - loss: 0.5700 - accuracy: 0.7020 - val_loss: 0.5358 - val_accuracy: 0.7326
+Epoch 4/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.5577 - accuracy: 0.7130 - val_loss: 0.5183 - val_accuracy: 0.7365
+Epoch 5/20
+146/146 [==============================] - 6s 43ms/step - loss: 0.5440 - accuracy: 0.7236 - val_loss: 0.5162 - val_accuracy: 0.7412
+Epoch 6/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.5261 - accuracy: 0.7342 - val_loss: 0.5177 - val_accuracy: 0.7412
+Epoch 7/20
+146/146 [==============================] - 6s 43ms/step - loss: 0.5160 - accuracy: 0.7422 - val_loss: 0.5068 - val_accuracy: 0.7549
+Epoch 8/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.5051 - accuracy: 0.7509 - val_loss: 0.4928 - val_accuracy: 0.7683
+Epoch 9/20
+146/146 [==============================] - 6s 43ms/step - loss: 0.4862 - accuracy: 0.7656 - val_loss: 0.4933 - val_accuracy: 0.7678
+Epoch 10/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.4811 - accuracy: 0.7673 - val_loss: 0.4745 - val_accuracy: 0.7794
+Epoch 11/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.4702 - accuracy: 0.7760 - val_loss: 0.4845 - val_accuracy: 0.7687
+Epoch 12/20
+146/146 [==============================] - 6s 43ms/step - loss: 0.4578 - accuracy: 0.7802 - val_loss: 0.4796 - val_accuracy: 0.7721
+Epoch 13/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.4536 - accuracy: 0.7866 - val_loss: 0.4598 - val_accuracy: 0.7923
+Epoch 14/20
+146/146 [==============================] - 6s 43ms/step - loss: 0.4391 - accuracy: 0.7959 - val_loss: 0.4418 - val_accuracy: 0.7945
+Epoch 15/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.4298 - accuracy: 0.7999 - val_loss: 0.4554 - val_accuracy: 0.8005
+Epoch 16/20
+146/146 [==============================] - 6s 43ms/step - loss: 0.4163 - accuracy: 0.8089 - val_loss: 0.4331 - val_accuracy: 0.8035
+Epoch 17/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.4111 - accuracy: 0.8113 - val_loss: 0.4206 - val_accuracy: 0.8044
+Epoch 18/20
+146/146 [==============================] - 6s 43ms/step - loss: 0.4110 - accuracy: 0.8119 - val_loss: 0.4224 - val_accuracy: 0.8156
+Epoch 19/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.3887 - accuracy: 0.8219 - val_loss: 0.4275 - val_accuracy: 0.8190
+Epoch 20/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.3814 - accuracy: 0.8250 - val_loss: 0.4193 - val_accuracy: 0.8237</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-14-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-13" class="cell" data-outputid="f2af5d8d-147a-4414-e70c-631592305e64" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>IMG_SHAPE <span class="op">=</span> (<span class="dv">150</span>, <span class="dv">150</span>, <span class="dv">3</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>base_model <span class="op">=</span> keras.applications.MobileNetV3Large(input_shape<span class="op">=</span>IMG_SHAPE,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                                               include_top<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                                               weights<span class="op">=</span><span class="st">'imagenet'</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>base_model.trainable <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> keras.Input(shape<span class="op">=</span>IMG_SHAPE)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> base_model(i, training <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>base_model_layer <span class="op">=</span> keras.Model(inputs <span class="op">=</span> i, outputs <span class="op">=</span> x)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>model4 <span class="op">=</span> models.Sequential([</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    base_model_layer,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    layers.RandomFlip(<span class="st">"horizontal_and_vertical"</span>),</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    layers.RandomRotation(<span class="fl">0.2</span>),</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Pooling layer to reduce dimensionality</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    layers.GlobalMaxPooling2D(),</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    layers.Dropout(<span class="fl">0.2</span>),</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">16</span>, activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">2</span>, activation<span class="op">=</span><span class="st">'softmax'</span>)</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>model4.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">'adam'</span>,</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>               loss<span class="op">=</span>losses.SparseCategoricalCrossentropy(),</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>               metrics<span class="op">=</span>[<span class="st">'accuracy'</span>])</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>model4.summary()</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> model4.fit(train_ds,</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>                      epochs<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>                      validation_data<span class="op">=</span>validation_ds)</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"accuracy"</span>], label <span class="op">=</span> <span class="st">"training"</span>)</span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"val_accuracy"</span>], label <span class="op">=</span> <span class="st">"validation"</span>)</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"epoch"</span>, ylabel <span class="op">=</span> <span class="st">"accuracy"</span>)</span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>WARNING:tensorflow:`input_shape` is undefined or non-square, or `rows` is not 224. Weights for input shape (224, 224) will be loaded as the default.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/mobilenet_v3/weights_mobilenet_v3_large_224_1.0_float_no_top_v2.h5
+12683000/12683000 [==============================] - 1s 0us/step
+Model: "sequential_3"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ model_1 (Functional)        (None, 5, 5, 960)         2996352   
+                                                                 
+ random_flip_3 (RandomFlip)  (None, 5, 5, 960)         0         
+                                                                 
+ random_rotation_3 (RandomR  (None, 5, 5, 960)         0         
+ otation)                                                        
+                                                                 
+ global_max_pooling2d (Glob  (None, 960)               0         
+ alMaxPooling2D)                                                 
+                                                                 
+ dropout_3 (Dropout)         (None, 960)               0         
+                                                                 
+ dense_7 (Dense)             (None, 16)                15376     
+                                                                 
+ dense_8 (Dense)             (None, 2)                 34        
+                                                                 
+=================================================================
+Total params: 3011762 (11.49 MB)
+Trainable params: 15410 (60.20 KB)
+Non-trainable params: 2996352 (11.43 MB)
+_________________________________________________________________
+Epoch 1/20
+146/146 [==============================] - 16s 64ms/step - loss: 0.2915 - accuracy: 0.9270 - val_loss: 0.0856 - val_accuracy: 0.9669
+Epoch 2/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0885 - accuracy: 0.9666 - val_loss: 0.0703 - val_accuracy: 0.9712
+Epoch 3/20
+146/146 [==============================] - 7s 46ms/step - loss: 0.0738 - accuracy: 0.9723 - val_loss: 0.0666 - val_accuracy: 0.9755
+Epoch 4/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0691 - accuracy: 0.9737 - val_loss: 0.0716 - val_accuracy: 0.9746
+Epoch 5/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0646 - accuracy: 0.9756 - val_loss: 0.0691 - val_accuracy: 0.9746
+Epoch 6/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0570 - accuracy: 0.9786 - val_loss: 0.0682 - val_accuracy: 0.9781
+Epoch 7/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0543 - accuracy: 0.9782 - val_loss: 0.0735 - val_accuracy: 0.9764
+Epoch 8/20
+146/146 [==============================] - 6s 43ms/step - loss: 0.0544 - accuracy: 0.9776 - val_loss: 0.0759 - val_accuracy: 0.9755
+Epoch 9/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0506 - accuracy: 0.9815 - val_loss: 0.0762 - val_accuracy: 0.9755
+Epoch 10/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0467 - accuracy: 0.9815 - val_loss: 0.0759 - val_accuracy: 0.9742
+Epoch 11/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0480 - accuracy: 0.9813 - val_loss: 0.0778 - val_accuracy: 0.9746
+Epoch 12/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0459 - accuracy: 0.9826 - val_loss: 0.0797 - val_accuracy: 0.9746
+Epoch 13/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0393 - accuracy: 0.9844 - val_loss: 0.0779 - val_accuracy: 0.9768
+Epoch 14/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0492 - accuracy: 0.9814 - val_loss: 0.0910 - val_accuracy: 0.9699
+Epoch 15/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0442 - accuracy: 0.9842 - val_loss: 0.0832 - val_accuracy: 0.9776
+Epoch 16/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0413 - accuracy: 0.9830 - val_loss: 0.0801 - val_accuracy: 0.9759
+Epoch 17/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0390 - accuracy: 0.9834 - val_loss: 0.0892 - val_accuracy: 0.9742
+Epoch 18/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0359 - accuracy: 0.9855 - val_loss: 0.0973 - val_accuracy: 0.9716
+Epoch 19/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0392 - accuracy: 0.9844 - val_loss: 0.0858 - val_accuracy: 0.9725
+Epoch 20/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0338 - accuracy: 0.9867 - val_loss: 0.0888 - val_accuracy: 0.9712</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-15-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-14" class="cell" data-outputid="0cd50026-44bd-4609-9645-1d77316ddc81" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>model5 <span class="op">=</span> models.Sequential([</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    base_model_layer,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    layers.RandomFlip(<span class="st">"horizontal_and_vertical"</span>),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    layers.RandomRotation(<span class="fl">0.2</span>),</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Pooling layer to reduce dimensionality</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    layers.GlobalMaxPooling2D(),</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    layers.Dropout(<span class="fl">0.5</span>),   <span class="co"># Changed to 0.5</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">'relu'</span>),  <span class="co"># Changed to 64</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    layers.Dense(<span class="dv">2</span>, activation<span class="op">=</span><span class="st">'softmax'</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>model5.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">'adam'</span>,</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>               loss<span class="op">=</span>losses.SparseCategoricalCrossentropy(),</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>               metrics<span class="op">=</span>[<span class="st">'accuracy'</span>])</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>model5.summary()</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> model5.fit(train_ds,</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>                      epochs<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>                      validation_data<span class="op">=</span>validation_ds)</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"accuracy"</span>], label <span class="op">=</span> <span class="st">"training"</span>)</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>plt.plot(history.history[<span class="st">"val_accuracy"</span>], label <span class="op">=</span> <span class="st">"validation"</span>)</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"epoch"</span>, ylabel <span class="op">=</span> <span class="st">"accuracy"</span>)</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model: "sequential_4"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ model_1 (Functional)        (None, 5, 5, 960)         2996352   
+                                                                 
+ random_flip_4 (RandomFlip)  (None, 5, 5, 960)         0         
+                                                                 
+ random_rotation_4 (RandomR  (None, 5, 5, 960)         0         
+ otation)                                                        
+                                                                 
+ global_max_pooling2d_1 (Gl  (None, 960)               0         
+ obalMaxPooling2D)                                               
+                                                                 
+ dropout_4 (Dropout)         (None, 960)               0         
+                                                                 
+ dense_9 (Dense)             (None, 64)                61504     
+                                                                 
+ dense_10 (Dense)            (None, 2)                 130       
+                                                                 
+=================================================================
+Total params: 3057986 (11.67 MB)
+Trainable params: 61634 (240.76 KB)
+Non-trainable params: 2996352 (11.43 MB)
+_________________________________________________________________
+Epoch 1/20
+146/146 [==============================] - 13s 54ms/step - loss: 0.7425 - accuracy: 0.9170 - val_loss: 0.1128 - val_accuracy: 0.9643
+Epoch 2/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.1864 - accuracy: 0.9490 - val_loss: 0.0897 - val_accuracy: 0.9682
+Epoch 3/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.1393 - accuracy: 0.9530 - val_loss: 0.0711 - val_accuracy: 0.9721
+Epoch 4/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.1149 - accuracy: 0.9573 - val_loss: 0.0632 - val_accuracy: 0.9733
+Epoch 5/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0972 - accuracy: 0.9644 - val_loss: 0.0655 - val_accuracy: 0.9746
+Epoch 6/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0884 - accuracy: 0.9668 - val_loss: 0.0662 - val_accuracy: 0.9746
+Epoch 7/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0919 - accuracy: 0.9648 - val_loss: 0.0654 - val_accuracy: 0.9759
+Epoch 8/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0796 - accuracy: 0.9714 - val_loss: 0.0638 - val_accuracy: 0.9733
+Epoch 9/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0852 - accuracy: 0.9697 - val_loss: 0.0665 - val_accuracy: 0.9742
+Epoch 10/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0731 - accuracy: 0.9714 - val_loss: 0.0700 - val_accuracy: 0.9729
+Epoch 11/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0775 - accuracy: 0.9699 - val_loss: 0.0619 - val_accuracy: 0.9759
+Epoch 12/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0736 - accuracy: 0.9714 - val_loss: 0.0643 - val_accuracy: 0.9764
+Epoch 13/20
+146/146 [==============================] - 7s 46ms/step - loss: 0.0776 - accuracy: 0.9693 - val_loss: 0.0618 - val_accuracy: 0.9772
+Epoch 14/20
+146/146 [==============================] - 7s 46ms/step - loss: 0.0702 - accuracy: 0.9736 - val_loss: 0.0658 - val_accuracy: 0.9751
+Epoch 15/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0698 - accuracy: 0.9731 - val_loss: 0.0682 - val_accuracy: 0.9759
+Epoch 16/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0721 - accuracy: 0.9722 - val_loss: 0.0670 - val_accuracy: 0.9751
+Epoch 17/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0695 - accuracy: 0.9733 - val_loss: 0.0637 - val_accuracy: 0.9764
+Epoch 18/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0620 - accuracy: 0.9758 - val_loss: 0.0740 - val_accuracy: 0.9708
+Epoch 19/20
+146/146 [==============================] - 7s 45ms/step - loss: 0.0688 - accuracy: 0.9754 - val_loss: 0.0682 - val_accuracy: 0.9742
+Epoch 20/20
+146/146 [==============================] - 6s 44ms/step - loss: 0.0612 - accuracy: 0.9756 - val_loss: 0.0707 - val_accuracy: 0.9751</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-16-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-15" class="cell" data-outputid="17f302d7-4aca-4f32-c961-70c6879af4ae" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>test_loss, test_accuracy <span class="op">=</span> model5.evaluate(test_ds)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test Loss: </span><span class="sc">{</span>test_loss<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test Accuracy: </span><span class="sc">{</span>test_accuracy<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>37/37 [==============================] - 3s 75ms/step - loss: 0.0794 - accuracy: 0.9695
+Test Loss: 0.07944756746292114
+Test Accuracy: 0.969475507736206</code></pre>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script type="application/vnd.jupyter.widget-state+json">
+{"1cd20887045d4decaede732358321f1f":{"model_module":"@jupyter-widgets/controls","model_name":"HBoxModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_2e9496cd359f4b88bde973b41d3a2e76","IPY_MODEL_7010acb5b7de4141bf39e0b3acf26f13","IPY_MODEL_c915b7841bf14f0badef55178835d6e4"],"layout":"IPY_MODEL_df0e918e5ccb4e22b6f57cd887b2e029"}},"2e9496cd359f4b88bde973b41d3a2e76":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_fb27c7978d194489a1c853c8ab0dfaad","placeholder":"​","style":"IPY_MODEL_e58099e30a7f43db892d422a8072af8b","value":"Dl Completed...: 100%"}},"7010acb5b7de4141bf39e0b3acf26f13":{"model_module":"@jupyter-widgets/controls","model_name":"FloatProgressModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_892016cf6dd4425da637df4bdf56ef8e","max":1,"min":0,"orientation":"horizontal","style":"IPY_MODEL_b1a32f4ff31c4dcf8a81a318bdb042b2","value":1}},"c915b7841bf14f0badef55178835d6e4":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_b7f22bf92f134bf9adc7b55d377ce922","placeholder":"​","style":"IPY_MODEL_9fdec105f4fb4f34937144cc898bcf31","value":" 1/1 [00:21&lt;00:00, 21.29s/ url]"}},"df0e918e5ccb4e22b6f57cd887b2e029":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"fb27c7978d194489a1c853c8ab0dfaad":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"e58099e30a7f43db892d422a8072af8b":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"892016cf6dd4425da637df4bdf56ef8e":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":"20px"}},"b1a32f4ff31c4dcf8a81a318bdb042b2":{"model_module":"@jupyter-widgets/controls","model_name":"ProgressStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"b7f22bf92f134bf9adc7b55d377ce922":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"9fdec105f4fb4f34937144cc898bcf31":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"9ac30b583a60445182bf261e5d79bede":{"model_module":"@jupyter-widgets/controls","model_name":"HBoxModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_b3f70d2c36b049c69f2511b8da54430e","IPY_MODEL_f51f276bca7b40a4abb71bae244893ca","IPY_MODEL_3ebebb38821b4305ad2e924b9085fb64"],"layout":"IPY_MODEL_86d24d3a420041f8a9a0a29b834bab42"}},"b3f70d2c36b049c69f2511b8da54430e":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_f23818e0b84b4c43be00868b4fc45302","placeholder":"​","style":"IPY_MODEL_89f289686bf54d9ca007d74a310cafd3","value":"Dl Size...: 100%"}},"f51f276bca7b40a4abb71bae244893ca":{"model_module":"@jupyter-widgets/controls","model_name":"FloatProgressModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_34dd41fbc8f24f8e8af1d0af84cc1498","max":1,"min":0,"orientation":"horizontal","style":"IPY_MODEL_fc04160eebc74ecb9f82465fec865bea","value":1}},"3ebebb38821b4305ad2e924b9085fb64":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_fc9ab59669c049b3a07d1c427ab84dd6","placeholder":"​","style":"IPY_MODEL_ce3e1afd71d64d228185e3242ffd8b90","value":" 786/786 [00:21&lt;00:00, 37.68 MiB/s]"}},"86d24d3a420041f8a9a0a29b834bab42":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"f23818e0b84b4c43be00868b4fc45302":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"89f289686bf54d9ca007d74a310cafd3":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"34dd41fbc8f24f8e8af1d0af84cc1498":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":"20px"}},"fc04160eebc74ecb9f82465fec865bea":{"model_module":"@jupyter-widgets/controls","model_name":"ProgressStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"fc9ab59669c049b3a07d1c427ab84dd6":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"ce3e1afd71d64d228185e3242ffd8b90":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"2cfa54deb817426f965f031eab21b09a":{"model_module":"@jupyter-widgets/controls","model_name":"HBoxModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_e87304c056bc4223834d17d41a9d3a43","IPY_MODEL_fc24459a9ee6474abb987dadaadca7ec","IPY_MODEL_18f5f4e0b0304d68baefddfcfe247589"],"layout":"IPY_MODEL_faf8f10068f3437db287b69d8ec35151"}},"e87304c056bc4223834d17d41a9d3a43":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_31f39fd7e1c84fb792e9d0e5f1ed5cbf","placeholder":"​","style":"IPY_MODEL_530e0be4eac548ab8542710db61898d9","value":"Generating splits...: 100%"}},"fc24459a9ee6474abb987dadaadca7ec":{"model_module":"@jupyter-widgets/controls","model_name":"FloatProgressModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"","description":"","description_tooltip":null,"layout":"IPY_MODEL_82b77a0f550b44738a14cc7660757750","max":1,"min":0,"orientation":"horizontal","style":"IPY_MODEL_4c712b858bce4c5eac3c0e69290b0ce4","value":1}},"18f5f4e0b0304d68baefddfcfe247589":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_f792638bda8f4dbea720a3f72c8afe67","placeholder":"​","style":"IPY_MODEL_dd920e501ca34025b83e0b3d81a767e4","value":" 1/1 [01:13&lt;00:00, 73.20s/ splits]"}},"faf8f10068f3437db287b69d8ec35151":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":"hidden","width":null}},"31f39fd7e1c84fb792e9d0e5f1ed5cbf":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"530e0be4eac548ab8542710db61898d9":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"82b77a0f550b44738a14cc7660757750":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"4c712b858bce4c5eac3c0e69290b0ce4":{"model_module":"@jupyter-widgets/controls","model_name":"ProgressStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"f792638bda8f4dbea720a3f72c8afe67":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"dd920e501ca34025b83e0b3d81a767e4":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"0cba5818d81d4883bef6ea10c4d1e4ee":{"model_module":"@jupyter-widgets/controls","model_name":"HBoxModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_c88e8c0a7fe74ecf9256c2fba4c28608","IPY_MODEL_7022270afcd145888fa85382cbf1b2db","IPY_MODEL_560e414ff3fc4ed6b0087d32daf9df84"],"layout":"IPY_MODEL_085d185639374d4fb32b0bd43d624a69"}},"c88e8c0a7fe74ecf9256c2fba4c28608":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_c05805fe4b614deb844b67dfa654292e","placeholder":"​","style":"IPY_MODEL_1ee354dc80af4508adbba389cfb1fd04","value":"Generating train examples...:  99%"}},"7022270afcd145888fa85382cbf1b2db":{"model_module":"@jupyter-widgets/controls","model_name":"FloatProgressModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"","description":"","description_tooltip":null,"layout":"IPY_MODEL_618ebf358e5140dbbf0e562a195f3206","max":23262,"min":0,"orientation":"horizontal","style":"IPY_MODEL_7bfab612f7fe45bf954ee9900e0e5486","value":23262}},"560e414ff3fc4ed6b0087d32daf9df84":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_0e04edb0e0c9486fa4213431670c3368","placeholder":"​","style":"IPY_MODEL_58190ba016444083918d4beb0468742b","value":" 22985/23262 [01:08&lt;00:01, 228.76 examples/s]"}},"085d185639374d4fb32b0bd43d624a69":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":"hidden","width":null}},"c05805fe4b614deb844b67dfa654292e":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"1ee354dc80af4508adbba389cfb1fd04":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"618ebf358e5140dbbf0e562a195f3206":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"7bfab612f7fe45bf954ee9900e0e5486":{"model_module":"@jupyter-widgets/controls","model_name":"ProgressStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"0e04edb0e0c9486fa4213431670c3368":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"58190ba016444083918d4beb0468742b":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"84805c670b1e4e5186395353db8e39eb":{"model_module":"@jupyter-widgets/controls","model_name":"HBoxModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_be2f365bfcb5488aa673fb83e3198147","IPY_MODEL_7565ea83067349d0b758b2fa9cb2cf38","IPY_MODEL_7350dbbf2b6a40b0884cc3d0d02d2e9d"],"layout":"IPY_MODEL_9c09074121a044679e43480a71df7480"}},"be2f365bfcb5488aa673fb83e3198147":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_d453f9558bcf40d5a9f183b37f06051e","placeholder":"​","style":"IPY_MODEL_3e048ee6d832464bbca94c8bcbbd9b0c","value":"Shuffling /root/tensorflow_datasets/cats_vs_dogs/4.0.1.incompleteSCNSQK/cats_vs_dogs-train.tfrecord*...:  98%"}},"7565ea83067349d0b758b2fa9cb2cf38":{"model_module":"@jupyter-widgets/controls","model_name":"FloatProgressModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"","description":"","description_tooltip":null,"layout":"IPY_MODEL_f1f30c419ea3438885e586c5ae9ae9bb","max":23262,"min":0,"orientation":"horizontal","style":"IPY_MODEL_837313913ca241f88788f1a73b8416e6","value":23262}},"7350dbbf2b6a40b0884cc3d0d02d2e9d":{"model_module":"@jupyter-widgets/controls","model_name":"HTMLModel","model_module_version":"1.5.0","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_a55b87bb8049470496a1f18fafbd7d00","placeholder":"​","style":"IPY_MODEL_be64a61354a640588b14ed9db0debc39","value":" 22726/23262 [00:04&lt;00:00, 5209.43 examples/s]"}},"9c09074121a044679e43480a71df7480":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":"hidden","width":null}},"d453f9558bcf40d5a9f183b37f06051e":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"3e048ee6d832464bbca94c8bcbbd9b0c":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"f1f30c419ea3438885e586c5ae9ae9bb":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"837313913ca241f88788f1a73b8416e6":{"model_module":"@jupyter-widgets/controls","model_name":"ProgressStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"a55b87bb8049470496a1f18fafbd7d00":{"model_module":"@jupyter-widgets/base","model_name":"LayoutModel","model_module_version":"1.2.0","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"be64a61354a640588b14ed9db0debc39":{"model_module":"@jupyter-widgets/controls","model_name":"DescriptionStyleModel","model_module_version":"1.5.0","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}}}
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
