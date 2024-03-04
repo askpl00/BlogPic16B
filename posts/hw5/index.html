@@ -935,14 +935,12 @@ Epoch 20/20
 </div>
 </div>
 </div>
-<div id="cell-15" class="cell" data-outputid="17f302d7-4aca-4f32-c961-70c6879af4ae" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>test_loss, test_accuracy <span class="op">=</span> model5.evaluate(test_ds)</span>
+<div id="cell-15" class="cell" data-outputid="f8d2c14d-9a2d-43a9-c33f-317031ebe438" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>loss, accuracy <span class="op">=</span> model5.evaluate(test_ds)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test Loss: </span><span class="sc">{</span>test_loss<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test Accuracy: </span><span class="sc">{</span>test_accuracy<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>37/37 [==============================] - 3s 75ms/step - loss: 0.0794 - accuracy: 0.9695
-Test Loss: 0.07944756746292114
+<pre><code>37/37 [==============================] - 1s 38ms/step - loss: 0.0794 - accuracy: 0.9695
 Test Accuracy: 0.969475507736206</code></pre>
 </div>
 </div>
